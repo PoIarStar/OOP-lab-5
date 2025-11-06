@@ -1,5 +1,7 @@
 #include "Parallelepiped.h"
 
+using std::to_string;
+
 Parallelepiped::Parallelepiped()
 {
 	a = new double(1);
@@ -31,7 +33,7 @@ Parallelepiped& Parallelepiped::operator=(const Parallelepiped& other)
 	return *this;
 }
 
-Parallelepiped::~Parallelepiped()
+Parallelepiped::~Parallelepiped() 
 {
 	delete a;
 	delete b;
@@ -46,4 +48,9 @@ double Parallelepiped::get_volume() const
 double Parallelepiped::get_area() const
 {
 	return 2.0 * (*a * *b + *b * *c + *a * *c);
+}
+
+std::string Parallelepiped::toString() const
+{
+	return "Parallelepiped(" + to_string(*a) + ", " + to_string(*b) + ", " + to_string(*c) + ")";
 }

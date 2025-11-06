@@ -10,9 +10,11 @@ public:
 	Parallelepiped(double a, double b, double c);
 	Parallelepiped(const Parallelepiped& other);
 	Parallelepiped& operator=(const Parallelepiped& other);
-	~Parallelepiped();
+	~Parallelepiped() override;
 
 	double get_volume() const override;
 	double get_area() const override;
+
+	std::string toString() const override;
 };
 

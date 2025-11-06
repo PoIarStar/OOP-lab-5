@@ -1,6 +1,5 @@
 #include "Ball.h"
 
-#define PI 3.1415926
 
 Ball::Ball()
 {
@@ -39,4 +38,9 @@ double Ball::get_volume() const
 double Ball::get_area() const
 {
 	return 4.0 * PI * *radius * *radius;
+}
+
+std::string Ball::toString() const
+{
+	return "Ball(" + std::to_string(*radius) + ")";
 }
