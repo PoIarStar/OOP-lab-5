@@ -8,8 +8,6 @@ Ball::Ball()
 
 Ball::Ball(double radius)
 {
-	if (LESS_OR_EQUAL(radius, 0))
-		throw std::underflow_error("Radius cannot be less or equal than zero");
 	this->radius = new double(radius);
 }
 
@@ -21,6 +19,7 @@ Ball::Ball(const Ball& other):Ball()
 Ball& Ball::operator=(const Ball& other)
 {
 	if (this != &other)
+
 		*radius = *other.radius;
 	return *this;
 }
@@ -30,14 +29,14 @@ Ball::~Ball()
 	delete radius;
 }
 
-double Ball::get_volume() const
+void Ball::calculate_volume()
 {
-	return 4.0 / 3.0 * PI * *radius * *radius * *radius;
+	*volume = 4.0 / 3.0 * PI * *radius * *radius * *radius;
 }
 
-double Ball::get_area() const
+void Ball::calculate_area()
 {
-	return 4.0 * PI * *radius * *radius;
+	*volume = 4.0 * PI * *radius * *radius;
 }
 
 std::string Ball::toString() const

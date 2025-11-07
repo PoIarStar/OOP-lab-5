@@ -14,8 +14,8 @@ public:
 	Ball& operator=(const Ball& other);
 	~Ball() override;
 
-	double get_volume() const override;
-	double get_area() const override;
+	void calculate_volume() override;
+	void calculate_area() override;
 
 	std::string toString() const override;
 };

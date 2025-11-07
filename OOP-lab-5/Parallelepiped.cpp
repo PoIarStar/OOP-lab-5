@@ -40,14 +40,14 @@ Parallelepiped::~Parallelepiped()
 	delete c;
 }
 
-double Parallelepiped::get_volume() const
+void Parallelepiped::calculate_volume()
 {
-	return *a * *b * *c;
+	*volume = *a * *b * *c;
 }
 
-double Parallelepiped::get_area() const
+void Parallelepiped::calculate_area()
 {
-	return 2.0 * (*a * *b + *b * *c + *a * *c);
+	*area = 2.0 * (*a * *b + *b * *c + *a * *c);
 }
 
 std::string Parallelepiped::toString() const
